@@ -17,7 +17,7 @@ impl <T: PartialOrd + Clone> ABST<T> {
 
 	//Creates a new empty tree
 	fn new() -> ABST<T> {
-		ABST::LEAF
+		ABST::Leaf
 	}
 	
 	// Determines if this tree is a leaf or a node
@@ -63,12 +63,12 @@ impl <T: PartialOrd + Clone> ABST<T> {
 	// gets the leftmost item of the tree
 	fn leftmost(&self) -> ABST<T> {
 		match &*self {
-			ABST:;Leaf => ABST::Leaf,
+			ABST::Leaf => ABST::Leaf,
 			ABST::Node(n) => if n.should_return_parent() { return ABST::Node(n.clone()); } else { return n.left.leftmost(); },
 		}
 	}
 
-	// gets tje rightmost item of the tree
+	// gets the rightmost item of the tree
 	fn rightmost(&self) -> ABST<T> {
 		match &*self {
 			ABST::Leaf => ABST::Leaf,
